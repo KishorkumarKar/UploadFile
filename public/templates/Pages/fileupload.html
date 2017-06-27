@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="Absolute-Center is-Responsive">
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+      <form ng-submit="productUploadProcess();" enctype="multipart/form-data">
+        <div class="checkbox">
+          <label>
+            Upload file <span class="btn btn-default btn-file btn-primary">
+            Browse <input file-model="product.imagefile" class="btn-file" type="file">
+            </span>
+          </label>
+          <label>
+            <span id="file"></span>
+          </label>
+          <label>
+            <span ng-if="imgPath" id="file">
+              <img ng-src="./uploads/{{imgPath}}" alt="image" width="150px">
+            </span>
+          </label>
+
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-def btn-block">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$('.btn-file').change(function(){
+  var fileNmae=$(this).val();
+  if(fileNmae)$('#file').html('File :- '+$(this).val());
+    //console.log($(this).val());
+
+});
+</script>
